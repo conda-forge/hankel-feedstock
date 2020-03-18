@@ -1,18 +1,18 @@
 {% set name = "hankel" %}
-{% set version = "0.3.9" %}
+{% set version = "1.0.0" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 6c2c0ba5143efd6556e657349ca7927e0db3821a23e3458a3748f71c792de2a5
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: a17e0db603e3bab4f7e2b4954c11a21a3fde50f8140dc878a28a5a1ef6cbb383
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -31,11 +31,11 @@ test:
     - hankel
 
 about:
-  home: "https://github.com/steven-murray/hankel"
+  home: https://github.com/steven-murray/hankel
   license: MIT
   license_family: MIT
   license_file: LICENSE.rst
-  summary: "Hankel Transformations using method of Ogata 2005"
+  summary: Hankel Transformations using method of Ogata 2005
   description: |
     Hankel transforms and integrals are commonplace in any area in which Fourier Transforms are required over fields that are radially symmetric.
     They involve integrating an arbitrary function multiplied by a Bessel function of arbitrary order (of the first kind).
