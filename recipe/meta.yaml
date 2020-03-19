@@ -25,6 +25,7 @@ requirements:
     - scipy >=0.16.1
     - mpmath >=1.0.0
     - numpy >=1.9.3
+    - setuptools
 
 test:
   imports:
