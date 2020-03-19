@@ -12,19 +12,19 @@ source:
 build:
   noarch: python
   number: 0
-  script: {{ PYTHON }} -m pip install . -vv
+  script: SETUPTOOLS_SCM_PRETEND_VERSION={{ version }} {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python
     - pip
-    - setuptools
+    - python >=3.5
+    - setuptools >=45
+    - setuptools_scm >=3.4
   run:
-    - python
-    - scipy >=0.12.0
-    - mpmath >=0.18
-    - numpy >=1.6.1
-    - future
+    - python >=3.5
+    - scipy >=0.16.1
+    - mpmath >=1.0.0
+    - numpy >=1.9.3
 
 test:
   imports:
