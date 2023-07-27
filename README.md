@@ -1,11 +1,11 @@
-About hankel
-============
+About hankel-feedstock
+======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/hankel-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/steven-murray/hankel
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/hankel-feedstock/blob/main/LICENSE.txt)
 
 Summary: Hankel Transformations using method of Ogata 2005
 
