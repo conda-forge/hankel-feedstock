@@ -6,27 +6,29 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: ce1d1cd1f5a621a23c5fb49d66d67c10659e844b0c4191dbfdd0de6515766045
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: SETUPTOOLS_SCM_PRETEND_VERSION={{ version }} {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.5
+    - python {{ python_min }}
     - setuptools >=45
     - setuptools_scm >=3.4
   run:
-    - python >=3.5
+    - python >={{ python_min }}
     - scipy >=0.16.1
     - mpmath >=1.0.0
     - numpy >=1.9.3
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - hankel
 
